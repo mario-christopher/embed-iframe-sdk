@@ -1,0 +1,31 @@
+#root {
+  padding: 2rem;
+}
+
+.user-name-label {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.user-name-label label {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.erc20-input-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.erc20-input-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.erc20-input-field {
+  width: 420px;
+}
