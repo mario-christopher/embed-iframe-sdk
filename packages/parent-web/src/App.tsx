@@ -1,16 +1,23 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { App as SdkApp } from "child-sdk";
 import './App.css'
+import MetaMaskButton from './components/MetaMaskButton';
 
 const CHILD_WEB_URL = 'http://127.0.0.1:5174/';
 
 function App() {
+  const currentOrigin = window.location.origin;
   const [userName, setUserName] = useState<string>('');
   const [debouncedUserName, setDebouncedUserName] = useState<string>('');
+  const [accountAddress, setAccountAddress] = useState<string>('');
 
   const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(e.target.value);
   }, []);
+
+  const handleAccountChange = (account: string | null) => {
+    setAccountAddress(account || '');
+  };
 
   // Debounce the userName to prevent iframe flashing
   useEffect(() => {
@@ -36,6 +43,7 @@ function App() {
         </div>
         <div className="section-container">
           <h2>Parent Web Site</h2>
+          <div className="origin-display">( {currentOrigin} )</div>
           <div className="name-input-container">
             <label htmlFor="name-address" className="name-input-label">Full Name:</label>
             <input
@@ -46,6 +54,19 @@ function App() {
               value={userName}
               onChange={handleNameChange}
             />
+          </div>
+
+          <div className="account-input-container">
+            <label htmlFor="account-address" className="account-input-label">Account Address:</label>
+            <input
+              id="account-address"
+              type="text"
+              className="input-field account-input-field"
+              placeholder="0x..."
+              value={accountAddress}
+              readOnly
+            />
+            <MetaMaskButton onAccountChange={handleAccountChange} />
           </div>
 
           <div className="section-container section-child-web">

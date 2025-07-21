@@ -1321,6 +1321,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embed-iframe-sdk@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "embed-iframe-sdk@workspace:."
+  languageName: unknown
+  linkType: soft
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -1852,12 +1858,6 @@ __metadata:
   checksum: 10c0/98102bc66b33fcf5ac044099d1257ba0b7ad5e3ccd3221f34dd508ab4070edff183276221684e1e0555b145fce0850c9f7d2b60a9fcac50fbb4ea0d6e845a3b1
   languageName: node
   linkType: hard
-
-"iframe-eg@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "iframe-eg@workspace:."
-  languageName: unknown
-  linkType: soft
 
 "ignore@npm:^5.2.0":
   version: 5.3.2

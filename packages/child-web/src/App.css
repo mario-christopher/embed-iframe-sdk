@@ -29,3 +29,12 @@
 .erc20-input-field {
   width: 420px;
 }
+
+.origin-display {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  font-family: var(--font-family-mono);
+  text-align: right;
+}
